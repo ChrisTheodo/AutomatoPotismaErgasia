@@ -1,0 +1,27 @@
+int val =0;
+
+void setup() {
+  // put your setup code here, to run once:
+
+  //digital pins
+  pinMode(PD2, OUTPUT);
+  digitalWrite(PD2, 0);
+
+    //analog pins
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  val = analogRead(A4);
+  val = constrain(val, 400,1023);
+  val = map(val,400,1023,100,0);
+  Serial.println(val);
+
+  if (val <40){digitalWrite(PD2, 1);}
+  else{digitalWrite(PD2, 0);}
+
+  delay(200);
+}
