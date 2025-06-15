@@ -21,7 +21,8 @@ void loop() {
   Serial.println(val);
 
   if (val <40){digitalWrite(PD2, 1);}
-  else{digitalWrite(PD2, 0);}
+  else if (val>60){digitalWrite(PD2, 0);}
 
   delay(200);
 }
+
